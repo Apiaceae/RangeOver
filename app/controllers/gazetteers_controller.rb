@@ -4,22 +4,31 @@ class GazetteersController < ApplicationController
   # GET /gazetteers
   # GET /gazetteers.json
   def index
-    @gazetteers = Gazetteer.all
-    @hash = Gmaps4rails.build_markers(@gazetteers) do |gazetteer, marker|
-      marker.lat gazetteer.latitude
-      marker.lng gazetteer.longitude
-      marker.infowindow gazetteer.name
+    if params[:search].present?
+      @gazetteers = Gazetteer.near(params[:search], 50)
+      @hash = Gmaps4rails.build_markers(@gazetteers) do |gazetteer, marker|
+        marker.lat gazetteer.latitude
+        marker.lng gazetteer.longitude
+        marker.infowindow gazetteer.name
+        end
+    else
+      @gazetteers = Gazetteer.all
+      @hash = Gmaps4rails.build_markers(@gazetteers) do |gazetteer, marker|
+        marker.lat gazetteer.latitude
+        marker.lng gazetteer.longitude
+        marker.infowindow gazetteer.name
+        end
+      end
     end
-  end
 
   # GET /gazetteers/1
   # GET /gazetteers/1.json
   def show
-    @gazetteers = Gazetteer.all
-    @hash = Gmaps4rails.build_markers(@gazetteers) do |gazetteer, marker|
-      marker.lat gazetteer.latitude
-      marker.lng gazetteer.longitude
-      marker.infowindow gazetteer.name
+    @gazetteer = Gazetteer.find(params[:id])
+    @hash = Gmaps4rails.build_markers(@gazetteer) do |gaz, marker|
+      marker.lat gaz.latitude
+      marker.lng gaz.longitude
+      marker.infowindow gaz.name
     end
   end
 

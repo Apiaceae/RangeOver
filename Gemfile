@@ -22,6 +22,9 @@ group :development do
   gem 'gmaps4rails'
   gem 'devise'
   gem 'geocoder'
+  gem 'puma'
+  gem 'pry'
+  # gem 'pry-rails'
 end
 
 
