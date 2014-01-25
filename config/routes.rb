@@ -1,4 +1,9 @@
 Rangeover::Application.routes.draw do
+  get 'geocode' => 'geocode#index'
+  get "geocode/index"
+  get "geocode/show"
+  get "geocode/new"
+  get "geocode/list"
   resources :tdwg_gazetteers
 
   resources :tdwg_level_fours
