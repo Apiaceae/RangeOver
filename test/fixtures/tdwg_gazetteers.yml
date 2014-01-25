@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  gazetteer: MyString
+  description: MyText
+  tdwg_level_four_id: 1
+  kew_region: MyString
+  kew_region_code: MyString
+  kew_region_subdivison: MyString
+  synonym: MyString
+
+two:
+  gazetteer: MyString
+  description: MyText
+  tdwg_level_four_id: 1
+  kew_region: MyString
+  kew_region_code: MyString
+  kew_region_subdivison: MyString
+  synonym: MyString

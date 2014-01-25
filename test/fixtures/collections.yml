@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  uniqueid: MyString
+  herbarium: MyString
+  accession: MyString
+  barcode: MyString
+  collector: MyString
+  collnumber: MyString
+  colldate: MyString
+  country: MyString
+  province: MyString
+  county: MyString
+  locality: MyString
+  latitude: 1.5
+  longitude: 1.5
+
+two:
+  uniqueid: MyString
+  herbarium: MyString
+  accession: MyString
+  barcode: MyString
+  collector: MyString
+  collnumber: MyString
+  colldate: MyString
+  country: MyString
+  province: MyString
+  county: MyString
+  locality: MyString
+  latitude: 1.5
+  longitude: 1.5

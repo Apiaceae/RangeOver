@@ -1,0 +1,13 @@
+China,Guangxi,Longsheng Xian,,二区平水乡桃善村红滩 
+"China,Hunan,Ningyuan Xian,,华白里 "
+"China,Guangxi,凌乐县,,甘田公社山洲大队 "
+"China,Guangxi,龙津县,,大青山敢门附近 "
+"China,Guangxi,凌云县,,玉洪老山之东南 "
+"China,Hunan,道县,,驷马桥公社楠竹坪大队 "
+"China,Guangxi,Xing'an Xian,,两金区佑安乡 "
+"China,Guangdong,和平县,,青州乡羊角区 "
+"China,Guangdong,河源县,,蒲田区蒲田乡 "
+"China,Guangdong,河源县,,蒲田区蒲田乡 "
+"China,Hunan,Xinning Xian,,紫云山 "
+"China,Hunan,洞口县,,那漆 "
+ "China,Guangdong,平远县,,泗水乡育新社埧坳仔 "

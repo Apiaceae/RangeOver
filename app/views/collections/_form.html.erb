@@ -1,0 +1,73 @@
+<%= form_for(@collection) do |f| %>
+  <% if @collection.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@collection.errors.count, "error") %> prohibited this collection from being saved:</h2>
+
+      <ul>
+      <% @collection.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :uniqueid %><br>
+    <%= f.text_field :uniqueid %>
+  </div>
+  <div class="field">
+    <%= f.label :herbarium %><br>
+    <%= f.text_field :herbarium %>
+  </div>
+  <div class="field">
+    <%= f.label :accession %><br>
+    <%= f.text_field :accession %>
+  </div>
+  <div class="field">
+    <%= f.label :barcode %><br>
+    <%= f.text_field :barcode %>
+  </div>
+  <div class="field">
+    <%= f.label :collector %><br>
+    <%= f.text_field :collector %>
+  </div>
+  <div class="field">
+    <%= f.label :collnumber %><br>
+    <%= f.text_field :collnumber %>
+  </div>
+  <div class="field">
+    <%= f.label :colldate %><br>
+    <%= f.text_field :colldate %>
+  </div>
+  <div class="field">
+    <%= f.label :country %><br>
+    <%= f.text_field :country %>
+  </div>
+  <div class="field">
+    <%= f.label :province %><br>
+    <%= f.text_field :province %>
+  </div>
+  <div class="field">
+    <%= f.label :county %><br>
+    <%= f.text_field :county %>
+  </div>
+  <div class="field">
+    <%= f.label :locality %><br>
+    <%= f.text_field :locality %>
+  </div>
+  <div class="field">
+    <%= f.label :address %><br>
+    <%= f.text_field :address %>
+  </div>
+  <div class="field">
+    <%= f.label :latitude %><br>
+    <%= f.text_field :latitude %>
+  </div>
+  <div class="field">
+    <%= f.label :longitude %><br>
+    <%= f.text_field :longitude %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -30,7 +30,7 @@
 <h3>Nearby gazetteers</h3>
 <ul>
 <% for gazetteer in @gazetteer.nearbys(1000) %>
-<li><%= link_to gazetteer.address, gazetteer %> (<%= gazetteer.distance.round(2) %> miles)</li>
+<li><%= link_to gazetteer.address, gazetteer %> (<%= gazetteer.distance.round(2) %> 公里)</li>
 <% end %>
 </ul>
 

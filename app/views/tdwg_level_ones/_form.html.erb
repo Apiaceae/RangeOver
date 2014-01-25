@@ -1,0 +1,25 @@
+<%= form_for(@tdwg_level_one) do |f| %>
+  <% if @tdwg_level_one.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@tdwg_level_one.errors.count, "error") %> prohibited this tdwg_level_one from being saved:</h2>
+
+      <ul>
+      <% @tdwg_level_one.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :continent %><br>
+    <%= f.text_field :continent %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

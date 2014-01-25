@@ -1,0 +1,45 @@
+<%= form_for(@tdwg_gazetteer) do |f| %>
+  <% if @tdwg_gazetteer.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@tdwg_gazetteer.errors.count, "error") %> prohibited this tdwg_gazetteer from being saved:</h2>
+
+      <ul>
+      <% @tdwg_gazetteer.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :gazetteer %><br>
+    <%= f.text_field :gazetteer %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :tdwg_level_four_id %><br>
+    <%= f.number_field :tdwg_level_four_id %>
+  </div>
+  <div class="field">
+    <%= f.label :kew_region %><br>
+    <%= f.text_field :kew_region %>
+  </div>
+  <div class="field">
+    <%= f.label :kew_region_code %><br>
+    <%= f.text_field :kew_region_code %>
+  </div>
+  <div class="field">
+    <%= f.label :kew_region_subdivison %><br>
+    <%= f.text_field :kew_region_subdivison %>
+  </div>
+  <div class="field">
+    <%= f.label :synonym %><br>
+    <%= f.text_field :synonym %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

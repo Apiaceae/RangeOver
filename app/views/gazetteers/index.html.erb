@@ -4,9 +4,16 @@
 
 <p>
   <%= text_field_tag :search, params[:search] %>
-  <%= submit_tag "Search nearby", :name => nil %>
+  <%= submit_tag "Search nearby", :name => nil, class: "button radius" %>
 </p>
 <% end %>
+<i class="batch batch-#{batch-browser-download}"></i>
+<nav class="breadcrumbs">
+<p>Download:
+  <%= link_to "CSV", gazetteers_path(format: "csv") %> |
+  <%= link_to "Excel", gazetteers_path(format: "xls") %>
+</p>
+</nav>
 <table>
   <thead>
     <tr>
@@ -15,6 +22,7 @@
       <th>Latitude</th>
       <th>Longitude</th>
       <th>Gmaps</th>
+      <th>Category</th>
       <th></th>
       <th></th>
       <th></th>
@@ -29,6 +37,7 @@
         <td><%= gazetteer.latitude %></td>
         <td><%= gazetteer.longitude %></td>
         <td><%= gazetteer.gmaps %></td>
+        <td><%= gazetteer.category.name %></td>
         <td><%= link_to 'Show', gazetteer %></td>
         <td><%= link_to 'Edit', edit_gazetteer_path(gazetteer) %></td>
         <td><%= link_to 'Destroy', gazetteer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -37,9 +46,10 @@
   </tbody>
 </table>
 
-<br>
+<%= will_paginate @gazetteers, class: 'pagination-centered' %>
 
-<%= link_to 'New Gazetteer', new_gazetteer_path %>
+
+<%= link_to 'New Gazetteer', new_gazetteer_path, class: "button radius" %>
 
 
 <div class="map_container">

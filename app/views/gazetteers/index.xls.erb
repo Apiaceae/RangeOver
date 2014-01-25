@@ -1,0 +1,28 @@
+<table border="1">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Address</th>
+      <th>Latitude</th>
+      <th>Longitude</th>
+      <th>Gmaps</th>
+      <th>Category</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @gazetteers.each do |gazetteer| %>
+      <tr>
+        <td><%= gazetteer.name %></td>
+        <td><%= gazetteer.address %></td>
+        <td><%= gazetteer.latitude %></td>
+        <td><%= gazetteer.longitude %></td>
+        <td><%= gazetteer.gmaps %></td>
+        <td><%= gazetteer.category.name %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

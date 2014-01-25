@@ -1,22 +1,29 @@
 class GazetteersController < ApplicationController
   before_action :set_gazetteer, only: [:show, :edit, :update, :destroy]
 
+
   # GET /gazetteers
   # GET /gazetteers.json
   def index
     if params[:search].present?
-      @gazetteers = Gazetteer.near(params[:search], 50)
+      # 查找附近50公里的地点
+      @gazetteers = Gazetteer.near(params[:search], 50, :unit => :km).paginate(:page => params[:page])
+      @hash = Gmaps4rails.build_markers(@gazetteers) do |gazetteer, marker|
+        marker.lat gazetteer.latitude
+        marker.lng gazetteer.longitude
+        marker.infowindow [gazetteer.name, gazetteer.latitude, gazetteer.longitude].compact.join(', ')
+        end
+    else
+      @gazetteers = Gazetteer.paginate(:page => params[:page])
       @hash = Gmaps4rails.build_markers(@gazetteers) do |gazetteer, marker|
         marker.lat gazetteer.latitude
         marker.lng gazetteer.longitude
         marker.infowindow gazetteer.name
         end
-    else
-      @gazetteers = Gazetteer.all
-      @hash = Gmaps4rails.build_markers(@gazetteers) do |gazetteer, marker|
-        marker.lat gazetteer.latitude
-        marker.lng gazetteer.longitude
-        marker.infowindow gazetteer.name
+        respond_to do |format|
+          format.html
+          format.csv { render text: @gazetteers.to_csv }
+          format.xls { send_data @gazetteers.to_csv(col_sep: "\t") }
         end
       end
     end
@@ -35,6 +42,7 @@ class GazetteersController < ApplicationController
   # GET /gazetteers/new
   def new
     @gazetteer = Gazetteer.new
+    @categories = Category.find(:all, :select => 'id, name')
   end
 
   # GET /gazetteers/1/edit
@@ -89,6 +97,6 @@ class GazetteersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def gazetteer_params
-      params.require(:gazetteer).permit(:name, :address, :latitude, :longitude, :gmaps)
+      params.require(:gazetteer).permit(:name, :address, :latitude, :longitude, :gmaps, :category_id, :user_id)
     end
 end

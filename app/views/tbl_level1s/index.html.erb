@@ -1,0 +1,29 @@
+<h1>Listing tbl_level1s</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Continent</th>
+      <th>Description</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tbl_level1s.each do |tbl_level1| %>
+      <tr>
+        <td><%= tbl_level1.continent %></td>
+        <td><%= tbl_level1.description %></td>
+        <td><%= link_to 'Show', tbl_level1 %></td>
+        <td><%= link_to 'Edit', edit_tbl_level1_path(tbl_level1) %></td>
+        <td><%= link_to 'Destroy', tbl_level1, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Tbl level1', new_tbl_level1_path %>

@@ -1,0 +1,29 @@
+<h1>Listing tdwg_level_ones</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Continent</th>
+      <th>Description</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tdwg_level_ones.each do |tdwg_level_one| %>
+      <tr>
+        <td><%= tdwg_level_one.continent %></td>
+        <td><%= tdwg_level_one.description %></td>
+        <td><%= link_to 'Show', tdwg_level_one %></td>
+        <td><%= link_to 'Edit', edit_tdwg_level_one_path(tdwg_level_one) %></td>
+        <td><%= link_to 'Destroy', tdwg_level_one, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Tdwg level one', new_tdwg_level_one_path %>

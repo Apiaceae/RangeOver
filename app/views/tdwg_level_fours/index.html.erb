@@ -1,0 +1,35 @@
+<h1>Listing tdwg_level_fours</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Country</th>
+      <th>Description</th>
+      <th>Tdwg level three</th>
+      <th>Code</th>
+      <th>Iso code</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tdwg_level_fours.each do |tdwg_level_four| %>
+      <tr>
+        <td><%= tdwg_level_four.country %></td>
+        <td><%= tdwg_level_four.description %></td>
+        <td><%= tdwg_level_four.tdwg_level_three.area %></td>
+        <td><%= tdwg_level_four.code %></td>
+        <td><%= tdwg_level_four.iso_code %></td>
+        <td><%= link_to 'Show', tdwg_level_four %></td>
+        <td><%= link_to 'Edit', edit_tdwg_level_four_path(tdwg_level_four) %></td>
+        <td><%= link_to 'Destroy', tdwg_level_four, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<%= will_paginate @tdwg_level_fours, class: 'pagination-centered' %>
+<%= link_to 'New Tdwg level four', new_tdwg_level_four_path %>

@@ -1,0 +1,41 @@
+<h1>Batch#index</h1>
+<p>Find me in app/views/batch/index.html.erb</p>
+
+<%= form_for :gazetteer do |f| %>
+ <%= f.label :"Please select your geocoding service provider, if you haven't any idea about geocoding service provider, please check out help page" %>
+ <p>Please notice that, every service have some limit for geocoding service for daily and ip constrain, be carefully use this resources</p>
+  <select name="provider">
+   <option></option>
+   <option value="1" selected="selected">Google</option>
+   <option value="2">Yahoo</option>
+   <option value="3">Bing</option>
+   <option value="4">Baidu</option>
+   <option value="5">Mapquest</option>
+   <option value="6">CloudMade</option>
+</select>
+<p>
+  <%= f.label :'Please enter your address names at the below area, one address record each line, comma or any seperated characters will be ignored' %>
+  <%= f.text_area :gazetteer %>
+</p>
+
+<%= submit_tag "Go Process First", :name => nil, class: "button radius" %>
+
+<p>
+  <a href="#" data-reveal-id="batchProcess"><%= submit_tag "Go Process", :name => nil, class: "button radius" %></a>
+</p>
+<div id="batchProcess" class="reveal-modal" data-reveal>
+
+  <h2>You provide the followin address list for geocoding service!</h2>
+
+
+  <p class="lead">Please don't close this form until geoding is finished</p>
+  <a class="close-reveal-modal">&#215;</a>
+  <div class="progress">
+  <span class="meter"></span>
+</div>
+</div>
+
+<% end %>
+
+
+

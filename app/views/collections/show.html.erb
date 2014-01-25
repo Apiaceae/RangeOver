@@ -1,0 +1,74 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Uniqueid:</strong>
+  <%= @collection.uniqueid %>
+</p>
+
+<p>
+  <strong>Herbarium:</strong>
+  <%= @collection.herbarium %>
+</p>
+
+<p>
+  <strong>Accession:</strong>
+  <%= @collection.accession %>
+</p>
+
+<p>
+  <strong>Barcode:</strong>
+  <%= @collection.barcode %>
+</p>
+
+<p>
+  <strong>Collector:</strong>
+  <%= @collection.collector %>
+</p>
+
+<p>
+  <strong>Collnumber:</strong>
+  <%= @collection.collnumber %>
+</p>
+
+<p>
+  <strong>Colldate:</strong>
+  <%= @collection.colldate %>
+</p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @collection.country %>
+</p>
+
+<p>
+  <strong>Province:</strong>
+  <%= @collection.province %>
+</p>
+
+<p>
+  <strong>County:</strong>
+  <%= @collection.county %>
+</p>
+
+<p>
+  <strong>Locality:</strong>
+  <%= @collection.locality %>
+</p>
+
+<p>
+  <strong>Locality:</strong>
+  <%= @collection.address %>
+</p>
+
+<p>
+  <strong>Latitude:</strong>
+  <%= @collection.latitude %>
+</p>
+
+<p>
+  <strong>Longitude:</strong>
+  <%= @collection.longitude %>
+</p>
+
+<%= link_to 'Edit', edit_collection_path(@collection) %> |
+<%= link_to 'Back', collections_path %>

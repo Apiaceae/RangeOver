@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Gazetteer:</strong>
+  <%= @tdwg_gazetteer.gazetteer %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @tdwg_gazetteer.description %>
+</p>
+
+<p>
+  <strong>Tdwg level four:</strong>
+  <%= @tdwg_gazetteer.tdwg_level_four_id %>
+</p>
+
+<p>
+  <strong>Kew region:</strong>
+  <%= @tdwg_gazetteer.kew_region %>
+</p>
+
+<p>
+  <strong>Kew region code:</strong>
+  <%= @tdwg_gazetteer.kew_region_code %>
+</p>
+
+<p>
+  <strong>Kew region subdivison:</strong>
+  <%= @tdwg_gazetteer.kew_region_subdivison %>
+</p>
+
+<p>
+  <strong>Synonym:</strong>
+  <%= @tdwg_gazetteer.synonym %>
+</p>
+
+<%= link_to 'Edit', edit_tdwg_gazetteer_path(@tdwg_gazetteer) %> |
+<%= link_to 'Back', tdwg_gazetteers_path %>

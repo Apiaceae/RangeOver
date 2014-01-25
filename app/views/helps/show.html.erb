@@ -1,0 +1,382 @@
+<h1>Helps#show</h1>
+<p>Find me in app/views/helps/show.html.erb</p>
+
+<table cellpadding="0" cellspacing="0" style="font-size:inherit" width="100%">
+<tbody>
+
+<p style="font-size:14px;margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px;text-align:left">BioGeomancer is able to georeference many different types of localities, and it is able to understand even more types than it is currently capable of georeferencing. Below is a list of known locality types and the status of BioGeomancer with respect to understanding them and georeferencing them.</p>
+<p style="font-size:14px;margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">There are numerous details about how interpretation is done by BioGeomancer that might impact the success or failure of a georeference. If you know for a fact that BioGeomancer is not performing as expected for a valid locality that it is supposed to be able to georeference, please <a href="http://code.google.com/p/biogeomancer-workbench/issues/entry" rel="nofollow" style="color:rgb(0,0,204)">submit an issue report</a> so we can try to fix the problem.</p>
+<table border="1" style="font-size:inherit">
+
+<tbody>
+<tr bgcolor="#aaaaaa">
+<td style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px" width="10%"><b>LocType</b></td>
+<td style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px" width="40%"><b>Description</b></td>
+<td style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px" width="30%"><b>Example</b></td>
+<td style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px" width="10%"><b>Understand</b></td>
+<td style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px" width="10%"><b>Georeference</b></td>
+</tr>
+<tr bgcolor="#eeeeee">
+<td style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">+2P</td>
+<td style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">orthogonal offsets from two paths (deprecated to two FOH Clauses)</td>
+<td style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">1.5 mi E La. Hwy. 1026 and 2 mi S U.S. 190</td>
+<td bgcolor="#ff0000" style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">No</td>
+<td bgcolor="#ff0000" style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">No</td>
+</tr>
+<tr>
+<td style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">ADDR</td>
+<td style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">street address</td>
+<td style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">9200 S WASATCH BLVD.</td>
+<td bgcolor="#33cc00" style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">Yes</td>
+<td bgcolor="#ff0000" style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">No</td>
+</tr>
+<tr bgcolor="#eeeeee">
+<td style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">ADM</td>
+<td style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">administrative unit (country, state, county, etc.)<br />
+</td>
+<td style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">Michigan</td>
+<td bgcolor="#33cc00" style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">Yes</td>
+<td bgcolor="#33cc00" style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">Yes</td>
+</tr>
+<tr>
+<td style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">BF</td>
+<td style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">between features</td>
+<td style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px"><a href="https://sites.google.com/site/biogeomancerworkbench/support/locality-types#BF" rel="nofollow" style="color:rgb(0,0,204)">between Gaastra and Stambaugh</a></td>
+<td bgcolor="#33cc00" style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">Yes</td>
+<td bgcolor="#33cc00" style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">Yes</td>
+</tr>
+<tr>
+<td style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">BP</td>
+<td style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">between paths (simpleLocType=BF)</td>
+<td style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">between Tanana R and Clearwater Cr</td>
+<td bgcolor="#33cc00" style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">Yes</td>
+<td bgcolor="#ff0000" style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">No</td>
+</tr>
+<tr>
+<td style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">E</td>
+<td style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">elevation</td>
+<td style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">2350M</td>
+<td bgcolor="#33cc00" style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">Yes</td>
+<td bgcolor="#ff0000" style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">No</td>
+</tr>
+<tr>
+<td style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">F</td>
+<td style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">feature</td>
+<td style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">Springfield</td>
+<td bgcolor="#33cc00" style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">Yes</td>
+<td bgcolor="#33cc00" style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">Yes</td>
+</tr>
+<tr>
+<td style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">FH</td>
+<td style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">heading from a feature, no offset</td>
+<td style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">W of Tucson</td>
+<td bgcolor="#33cc00" style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">Yes</td>
+<td bgcolor="#33cc00" style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">Yes</td>
+</tr>
+<tr>
+<td style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">FO</td>
+<td style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">offset from a feature, no heading</td>
+<td style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">5 km outside Calgary</td>
+<td bgcolor="#33cc00" style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">Yes</td>
+<td bgcolor="#33cc00" style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">Yes</td>
+</tr>
+<tr>
+<td style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">FOF</td>
+<td style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">offset from a feature at a heading toward a feature</td>
+<td style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">10 km from Leiden to Haarlem</td>
+<td bgcolor="#ff0000" style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">No</td>
+<td bgcolor="#ff0000" style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">No</td>
+</tr>
+<tr>
+<td style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">FOH</td>
+<td style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">offset from a feature at a heading</td>
+<td style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px"><a href="https://sites.google.com/site/biogeomancerworkbench/support/locality-types#FOH" rel="nofollow" style="color:rgb(0,0,204)">10 KM N GAASTRA</a></td>
+<td bgcolor="#33cc00" style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">Yes</td>
+<td bgcolor="#33cc00" style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">Yes</td>
+</tr>
+<tr>
+<td style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">FOO</td>
+<td style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">orthogonal offsets from a feature</td>
+<td style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px"><a href="https://sites.google.com/site/biogeomancerworkbench/support/locality-types#FOO" rel="nofollow" style="color:rgb(0,0,204)">7 km S and 3 km E Gaastra</a></td>
+<td bgcolor="#33cc00" style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">Yes</td>
+<td bgcolor="#33cc00" style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">Yes</td>
+</tr>
+<tr bgcolor="#eeeeee">
+<td style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">FOP</td>
+<td style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">offset from feature along a path, no heading (deprecated to two Clauses, FO and P)</td>
+<td style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">2.1 mi from Park Headquarters on Mauna Loa Strip Road</td>
+<td bgcolor="#ff0000" style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">No</td>
+<td bgcolor="#ff0000" style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">No</td>
+</tr>
+<tr bgcolor="#eeeeee">
+<td style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">FPH</td>
+<td style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">heading from a feature along a path, no offset (deprecated to two Clauses, P and FH)</td>
+<td style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">Murphy Dome Road NW of Fairbanks</td>
+<td bgcolor="#ff0000" style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">No</td>
+<td bgcolor="#ff0000" style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">No</td>
+</tr>
+<tr>
+<td style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">FPOH</td>
+<td style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">offset from feature at a heading along a path</td>
+<td style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">0.4 mi N Collinston on LA 138<br />
+18.2 MI BY RD S BALMORRHEA</td>
+<td bgcolor="#ff0000" style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">No</td>
+<td bgcolor="#ff0000" style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">No</td>
+</tr>
+<tr>
+<td style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">FS</td>
+<td style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">subdivision of a feature</td>
+<td style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">N part of Mono Lake</td>
+<td bgcolor="#33cc00" style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">Yes</td>
+<td bgcolor="#33cc00" style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">Yes</td>
+</tr>
+<tr>
+<td style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">J</td>
+<td style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">junction</td>
+<td style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">CONFLUENCE OF LABARGE CREEK &amp; SOUTH LABARGE CREEK</td>
+<td bgcolor="#33cc00" style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">Yes</td>
+<td bgcolor="#ff0000" style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">No</td>
+</tr>
+<tr>
+<td style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">JO</td>
+<td style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">offset from a junction without a heading</td>
+<td style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">0.75 mi. up Bear Creek Trail from Hwy. 93</td>
+<td bgcolor="#ff0000" style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">No</td>
+<td bgcolor="#ff0000" style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">No</td>
+</tr>
+<tr>
+<td style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">JH</td>
+<td style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">at a heading from a junction</td>
+<td style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">NW of the junction of Sandhill and Hagadorn Roads</td>
+<td bgcolor="#ff0000" style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">No</td>
+<td bgcolor="#ff0000" style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">No</td>
+</tr>
+<tr>
+<td style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">JOH</td>
+<td style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">offset at a heading from a junction</td>
+<td style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">0.5 mi. W Sandhill and Hagadorn Roads</td>
+<td bgcolor="#ff0000" style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">No</td>
+<td bgcolor="#ff0000" style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">No</td>
+</tr>
+<tr>
+<td style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">JOO</td>
+<td style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">orthogonal offsets from a junction</td>
+<td style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">2.5 MI N, 21 MI W, INTERSECTION FIRST AND CENTRAL</td>
+<td bgcolor="#ff0000" style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">No</td>
+<td bgcolor="#ff0000" style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">No</td>
+</tr>
+<tr>
+<td style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">JPOH</td>
+<td style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">offset along a path at a heading from a junction</td>
+<td style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">164 mi W jct Bc 1 &amp; 3 (On Bc 1)"</td>
+<td bgcolor="#ff0000" style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">No</td>
+<td bgcolor="#ff0000" style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">No</td>
+</tr>
+<tr>
+<td style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">LL</td>
+<td style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">latitude and longitude coordinates</td>
+<td style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">15d 57'N,99d 26'E</td>
+<td bgcolor="#33cc00" style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">Yes</td>
+<td bgcolor="#33cc00" style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">Yes</td>
+</tr>
+<tr>
+<td style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">NF</td>
+<td style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">near a feature</td>
+<td style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px"><a href="https://sites.google.com/site/biogeomancerworkbench/support/locality-types#NF" rel="nofollow" style="color:rgb(0,0,204)">near Gaastra</a></td>
+<td bgcolor="#33cc00" style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">Yes</td>
+<td bgcolor="#33cc00" style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">Yes</td>
+</tr>
+<tr>
+<td style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">NJ</td>
+<td style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">near a junction</td>
+<td style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">area at junction of Black River and Oshetna River</td>
+<td bgcolor="#ff0000" style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">No</td>
+<td bgcolor="#ff0000" style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">No</td>
+</tr>
+<tr>
+<td style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">NN</td>
+<td style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">specific locality not known</td>
+<td style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">UNKNOWN</td>
+<td bgcolor="#33cc00" style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">Yes</td>
+<td bgcolor="#ff0000" style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">No</td>
+</tr>
+<tr>
+<td style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">NP</td>
+<td style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">near a path (simpleLocType=NF)</td>
+<td style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">vicinity of Uyamitquaq Cr.</td>
+<td bgcolor="#ff0000" style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">No</td>
+<td bgcolor="#ff0000" style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">No</td>
+</tr>
+<tr>
+<td style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">NPOM</td>
+<td style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">near offset marker</td>
+<td style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">near MS117 Dalton Hwy.</td>
+<td bgcolor="#ff0000" style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">No</td>
+<td bgcolor="#ff0000" style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">No</td>
+</tr>
+<tr>
+<td style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">P</td>
+<td style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">path or linear feature (simpleLocType=F)</td>
+<td style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">Hwy. 1</td>
+<td bgcolor="#33cc00" style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">Yes</td>
+<td bgcolor="#ff0000" style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">No</td>
+</tr>
+<tr bgcolor="#eeeeee">
+<td style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">PBF</td>
+<td style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">on a path between features, (deprecated to two Clauses, P and BF)</td>
+<td style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">trail from La Cantarrana Camp to Cascante Camp</td>
+<td bgcolor="#ff0000" style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">No</td>
+<td bgcolor="#ff0000" style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">No</td>
+</tr>
+<tr>
+<td style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">PH</td>
+<td style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">at a heading from a path (simpleLocType=FH)</td>
+<td style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">W side Purgatory Creek</td>
+<td bgcolor="#ff0000" style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">No</td>
+<td bgcolor="#ff0000" style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">No</td>
+</tr>
+<tr>
+<td style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">PO</td>
+<td style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">offset along a path, no heading or feature (simpleLocType=FO)</td>
+<td style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">5 km along Hwy. 101</td>
+<td bgcolor="#ff0000" style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">No</td>
+<td bgcolor="#ff0000" style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">No</td>
+</tr>
+<tr>
+<td style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">POH</td>
+<td style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">offset at a heading from a path (simpleLocType=FOH)</td>
+<td style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">2 mi N Canadian border</td>
+<td bgcolor="#33cc00" style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">Yes</td>
+<td bgcolor="#ff0000" style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">No</td>
+</tr>
+<tr>
+<td style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">POM</td>
+<td style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">offset marker</td>
+<td style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">Mi 66 Denali Park Road</td>
+<td bgcolor="#ff0000" style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">No</td>
+<td bgcolor="#ff0000" style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">No</td>
+</tr>
+<tr>
+<td style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">PS</td>
+<td style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">subdivision of a path (simpleLocType=FS)</td>
+<td style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">mouth of Goodpaster River</td>
+<td bgcolor="#ff0000" style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">No</td>
+<td bgcolor="#ff0000" style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">No</td>
+</tr>
+<tr bgcolor="#eeeeee">
+<td style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">Q</td>
+<td style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">map quadrangle name (deprecated to LocType F)</td>
+<td style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">Gulkana D-3</td>
+<td bgcolor="#ff0000" style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">No</td>
+<td bgcolor="#ff0000" style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">No</td>
+</tr>
+<tr>
+<td style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">TRS</td>
+<td style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">PLSS descriptions, Township Range Section</td>
+<td style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px"><a href="https://sites.google.com/site/biogeomancerworkbench/support/locality-types#TRS" rel="nofollow" style="color:rgb(0,0,204)">T20S R1E SEC8</a></td>
+<td bgcolor="#33cc00" style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">Yes</td>
+<td bgcolor="#33cc00" style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">Yes</td>
+</tr>
+<tr>
+<td style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">TRSS</td>
+<td style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">subdivision of a PLSS section</td>
+<td style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">T3S, R10E, Sec 1, NW 1/4 NE 1/4 (meaning the NW corner of the NE corner)</td>
+<td bgcolor="#33cc00" style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">Yes</td>
+<td bgcolor="#33cc00" style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">Yes</td>
+</tr>
+<tr>
+<td style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">UNK</td>
+<td style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">undefined</td>
+<td style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">B-2</td>
+<td bgcolor="#33cc00" style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">Yes</td>
+<td bgcolor="#ff0000" style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">No</td>
+</tr>
+<tr>
+<td style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">UTM</td>
+<td style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">Universal Transverse Mercator coordinates</td>
+<td style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">Zone 14 135260E 3548093N</td>
+<td bgcolor="#ff0000" style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">No</td>
+<td bgcolor="#ff0000" style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">No</td>
+</tr>
+</tbody>
+</table>
+<p style="font-size:14px;margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px;text-align:left"> </p>
+<p style="font-size:14px;margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px;text-align:left"><font size="2"><b>Units BioGeomancer can understand:</b></font></p>
+<p style="font-size:14px;margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px;text-align:left">(in upper or lower case) m, meter(s), metre(s), km, kilometer(s), kilometre(s), mi, mile(s), ft, foot, feet, yd, yard(s), nm, nautical mile(s)</p>
+<p style="font-size:14px;margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px;text-align:left"> </p>
+<p style="font-size:14px;margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px;text-align:left"><font size="2"><b>Number formats BioGeomancer can understand (individual examples enclosed in parentheses):</b></font></p>
+<p style="font-size:14px;margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px;text-align:left">(50,000), (50000), (50 000), (45.43123)</p>
+<p style="font-size:14px;margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px;text-align:left"> </p>
+<p style="font-size:14px;margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px;text-align:left"><font size="2"><b>Headings BioGeomancer can understand:</b></font></p>
+<p style="font-size:14px;margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px;text-align:left">(in upper or lower case) N, E, S, W, NE, SE, SW, NW, NNE, ENE, ESE, SSE, SSW, WSW, WNW, NNW</p>
+<p style="font-size:14px;margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px;text-align:left">(in upper or lower case) north, east, south, west, northeast, southeast, southwest, northwest, north-northwest, east-northeast, east-southeast, south-southeast, south-southwest, west-southwest, west-northwest, north-northwest</p>
+<p style="font-size:14px;margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px;text-align:left"> </p>
+<p style="font-size:14px;margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px;text-align:left"><font size="2"><b>Variations meaning "near" that BioGeomancer can understand (all treated the same):</b></font></p>
+<p style="font-size:14px;margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px;text-align:left">(in upper or lower case) <font size="2">near, vicinity (of), vic. (of), above, below, area (of), off</font></p>
+<p style="font-size:14px;margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px;text-align:left"><font size="2">The word "at" is interpreted as a clause separator rather than as an indicator of proximity. For example, the phrase "3 mi NE Bumping Lake at Goose Prairie" would be understand by BioGeomancer as "3 mi NE Bumping Lake, Goose Prairie".<b> </b></font></p>
+<p style="font-size:14px;margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px;text-align:left"><font size="2"><b> </b></font></p>
+<span style="font-size:14px"><a href="" name="BF" rel="nofollow" style="color:rgb(0,0,204)"></a></span>
+<p style="font-size:14px;margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px;text-align:left"><font size="2"><b>Examples of variations on locality type BF that BioGeomancer can understand:</b></font></p>
+<p style="font-size:14px;margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px;text-align:left"><font size="2">between Gaastra and Stambaugh<br />
+</font></p>
+<font size="2" style="font-size:14px">from Gaastra to Stambaugh<br />
+above Gaastra and below Stambaugh<br />
+</font>
+<p style="font-size:14px;margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px"><font size="2">above Gaastra below</font> Stambaugh</p>
+<p style="font-size:14px;margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">Note: "above Gaastra, below Stambaugh" will be interpreted as "near Gaastra, near Stambaugh" not "between Gaastra and Stambaugh".<br />
+</p>
+<font size="2" style="font-size:14px">Note: "Gaastra to Stambaugh" is not understood.</font>
+<p style="font-size:14px;margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px"><font size="2"> </font></p>
+<span style="font-size:14px"><a href="" name="FOH" rel="nofollow" style="color:rgb(0,0,204)"></a></span>
+<p style="font-size:14px;margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px;text-align:left"><font size="2"><b>Examples of variations on locality type FOH that BioGeomancer can understand: </b></font></p>
+<p style="font-size:14px;margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px;text-align:left"><font size="2">10 miles North of Gaastra</font></p>
+<p style="font-size:14px;margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px;text-align:left"><font size="2">10 mi N from Gaastra</font></p>
+<p style="font-size:14px;margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px;text-align:left"><font size="2">10 mi N Gaastra</font></p>
+<p style="font-size:14px;margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px;text-align:left"><font size="2">10mi N Gaastra</font></p>
+<p style="font-size:14px;margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px;text-align:left"><font size="2">10mi.N Gaastra</font></p>
+<p style="font-size:14px;margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px;text-align:left"><font size="2">Gaastra, 10mi N</font></p>
+<p style="font-size:14px;margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px;text-align:left"><font size="2">Gaastra; 10 mi N</font></p>
+<p style="font-size:14px;margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px;text-align:left"> </p>
+<span style="font-size:14px"><a href="" name="FOO" rel="nofollow" style="color:rgb(0,0,204)"></a></span>
+<p style="font-size:14px;margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px;text-align:left"><font size="2"><b>Examples of variations on locality type FOO that BioGeomancer can understand:</b></font></p>
+<p style="font-size:14px;margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px;text-align:left"><font size="2">7 kilometers South and 3 km E of Gaastra</font></p>
+<p style="font-size:14px;margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px;text-align:left"><font size="2">7km S, 3 km E Gaastra</font></p>
+<p style="font-size:14px;margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px;text-align:left"><font size="2">Gaastra, 7 km S and 3km E</font></p>
+<p style="font-size:14px;margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px;text-align:left"><font size="2">Gaastra, 7 km S, 3 km E</font></p>
+<p style="font-size:14px;margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px;text-align:left"><font size="2">Gaastra; 7 km S, 3 km E</font></p>
+<p style="font-size:14px;margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px;text-align:left"><font size="2"> </font></p>
+<span style="font-size:14px"><a href="" name="NF" rel="nofollow" style="color:rgb(0,0,204)"></a></span>
+<p style="font-size:14px;margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px;text-align:left"><font size="2"><b>Examples of variations on locality type NF that BioGeomancer can understand:</b></font></p>
+<p style="font-size:14px;margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px;text-align:left"><font size="2">near Gaastra</font></p>
+<p style="font-size:14px;margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px;text-align:left"><font size="2">vic. of Gaastra<br />
+</font></p>
+<p style="font-size:14px;margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px"><font size="2">Gaastra, area of</font></p>
+<br />
+<span style="font-size:14px"><a href="" name="TRS" rel="nofollow" style="color:rgb(0,0,204)"></a></span>
+<p style="font-size:14px;margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px"><b>Examples of variations on locality type TRS that BioGeomancer can understand:</b></p>
+<br />
+<p style="font-size:14px;margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">Note: There are many replicate TRS entries, each bound to a different meridian. To get the best results on a TRS search, include the State in a separate clause (i.e., in the StateProvince field in batch processing, or separated from the TRS by a comma or semi-colon in single georeference mode.</p>
+<br />
+<p style="font-size:14px;margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">Township 13 South Range 12 West Section 8</p>
+<p style="font-size:14px;margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">T13S R12W S8</p>
+<p style="font-size:14px;margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">T.13S R.12W S.8</p>
+<p style="font-size:14px;margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">T 13 S R 12 W Sec8</p>
+<div style="font-size:14px"><br />
+</div>
+</div>
+<div style="font-size:14px;clear:both"></div>
+</div>
+</div>
+</div>
+</div></div></td></tr></tbody></table>
+</div>
+</div>
+<div id="sites-canvas-bottom-panel">
+<div xmlns="http://www.w3.org/1999/xhtml" id="COMP_page-subpages"> </div>
+<a xmlns="http://www.w3.org/1999/xhtml" name="page-comments"></a>
+<div xmlns="http://www.w3.org/1999/xhtml" id="COMP_page-comments"><div class="sites-comment-docos-wrapper"><div class="sites-comment-docos"><div class="sites-comment-docos-background"></div><div class="sites-comment-docos-header"><div class="sites-comment-docos-header-title">评论</div></div><div id="sites-comment-docos-pane" class="sites-comment-docos-pane"></div></div></div></div>
+</div>
+</div>
+</td>
+</tr>
+</table>

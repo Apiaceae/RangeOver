@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Region:</strong>
+  <%= @tdwg_level_two.region %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @tdwg_level_two.description %>
+</p>
+
+<p>
+  <strong>Tdwg level one:</strong>
+  <%= @tdwg_level_two.tdwg_level_one_id %>
+</p>
+
+<%= link_to 'Edit', edit_tdwg_level_two_path(@tdwg_level_two) %> |
+<%= link_to 'Back', tdwg_level_twos_path %>

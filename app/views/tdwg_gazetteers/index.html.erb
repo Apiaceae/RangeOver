@@ -1,0 +1,39 @@
+<h1>Listing tdwg_gazetteers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Gazetteer</th>
+      <th>Description</th>
+      <th>Tdwg level four</th>
+      <th>Kew region</th>
+      <th>Kew region code</th>
+      <th>Kew region subdivison</th>
+      <th>Synonym</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tdwg_gazetteers.each do |tdwg_gazetteer| %>
+      <tr>
+        <td><%= tdwg_gazetteer.gazetteer %></td>
+        <td><%= tdwg_gazetteer.description %></td>
+        <td><%= tdwg_gazetteer.tdwg_level_four.country %></td>
+        <td><%= tdwg_gazetteer.kew_region %></td>
+        <td><%= tdwg_gazetteer.kew_region_code %></td>
+        <td><%= tdwg_gazetteer.kew_region_subdivison %></td>
+        <td><%= tdwg_gazetteer.synonym %></td>
+        <td><%= link_to 'Show', tdwg_gazetteer %></td>
+        <td><%= link_to 'Edit', edit_tdwg_gazetteer_path(tdwg_gazetteer) %></td>
+        <td><%= link_to 'Destroy', tdwg_gazetteer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<%= will_paginate @tdwg_gazetteers, class: 'pagination-centered' %>
+<%= link_to 'New Tdwg gazetteer', new_tdwg_gazetteer_path %>

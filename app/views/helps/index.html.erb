@@ -1,0 +1,426 @@
+<h1>Helps#index</h1>
+<p>Find me in app/views/helps/index.html.erb</p>
+<h3>
+<a name="street-address-services" class="anchor" href="#street-address-services"><span class="octicon octicon-link"></span></a>Street Address Services</h3>
+
+<p>The following is a comparison of the supported geocoding APIs. The "Limitations" listed for each are a very brief and incomplete summary of some special limitations beyond basic data source attribution. Please read the official Terms of Service for a service before using it.</p>
+
+<h4>
+<a name="google-google-google_premier" class="anchor" href="#google-google-google_premier"><span class="octicon octicon-link"></span></a>Google (<code>:google</code>, <code>:google_premier</code>)</h4>
+
+<ul>
+<li>
+<strong>API key</strong>: required for Premier (do NOT use a key for the free version)</li>
+<li>
+<strong>Key signup</strong>: <a href="https://developers.google.com/maps/documentation/business/">https://developers.google.com/maps/documentation/business/</a>
+</li>
+<li>
+<strong>Quota</strong>: 2,500 requests/day, 100,000 with Google Maps API Premier</li>
+<li>
+<strong>Region</strong>: world</li>
+<li>
+<strong>SSL support</strong>: yes</li>
+<li>
+<strong>Languages</strong>: ar, eu, bg, bn, ca, cs, da, de, el, en, en-AU, en-GB, es, eu, fa, fi, fil, fr, gl, gu, hi, hr, hu, id, it, iw, ja, kn, ko, lt, lv, ml, mr, nl, no, pl, pt, pt-BR, pt-PT, ro, ru, sk, sl, sr, sv, tl, ta, te, th, tr, uk, vi, zh-CN, zh-TW (see <a href="http://spreadsheets.google.com/pub?key=p9pdwsai2hDMsLkXsoM05KQ&amp;gid=1">http://spreadsheets.google.com/pub?key=p9pdwsai2hDMsLkXsoM05KQ&amp;gid=1</a>)</li>
+<li>
+<strong>Extra options</strong>: <code>:bounds</code> - pass SW and NE coordinates as an array of two arrays to bias results towards a viewport</li>
+<li>
+<strong>Documentation</strong>: <a href="http://code.google.com/apis/maps/documentation/geocoding/#JSON">http://code.google.com/apis/maps/documentation/geocoding/#JSON</a>
+</li>
+<li>
+<strong>Terms of Service</strong>: <a href="http://code.google.com/apis/maps/terms.html#section_10_12">http://code.google.com/apis/maps/terms.html#section_10_12</a>
+</li>
+<li>
+<strong>Limitations</strong>: "You must not use or display the Content without a corresponding Google map, unless you are explicitly permitted to do so in the Maps APIs Documentation, or through written permission from Google." "You must not pre-fetch, cache, or store any Content, except that you may store: (i) limited amounts of Content for the purpose of improving the performance of your Maps API Implementation..."</li>
+<li>
+<strong>Notes</strong>: To use Google Premier set <code>Geocoder.configure(:lookup =&gt; :google_premier, :api_key =&gt; [key, client, channel])</code>.</li>
+</ul><h4>
+<a name="yahoo-boss-yahoo" class="anchor" href="#yahoo-boss-yahoo"><span class="octicon octicon-link"></span></a>Yahoo BOSS (<code>:yahoo</code>)</h4>
+
+<p>Yahoo BOSS is <strong>not a free service</strong>. As of November 17, 2012 Yahoo no longer offers a free geocoding API.</p>
+
+<ul>
+<li>
+<strong>API key</strong>: requires OAuth consumer key and secret (set <code>Geocoder.configure(:api_key =&gt; [key, secret])</code>)</li>
+<li>
+<strong>Key signup</strong>: <a href="http://developer.yahoo.com/boss/geo/">http://developer.yahoo.com/boss/geo/</a>
+</li>
+<li>
+<strong>Quota</strong>: unlimited, but subject to usage fees</li>
+<li>
+<strong>Region</strong>: world</li>
+<li>
+<strong>SSL support</strong>: no</li>
+<li>
+<strong>Languages</strong>: en, fr, de, it, es, pt, nl, zh, ja, ko</li>
+<li>
+<strong>Documentation</strong>: <a href="http://developer.yahoo.com/boss/geo/docs/index.html">http://developer.yahoo.com/boss/geo/docs/index.html</a>
+</li>
+<li>
+<strong>Terms of Service</strong>: <a href="http://info.yahoo.com/legal/us/yahoo/boss/tou/?pir=ucJPcJ1ibUn.h.d.lVmlcbcEkoHjwJ_PvxG9SLK9VIbIQAw1XFrnDqY-">http://info.yahoo.com/legal/us/yahoo/boss/tou/?pir=ucJPcJ1ibUn.h.d.lVmlcbcEkoHjwJ_PvxG9SLK9VIbIQAw1XFrnDqY-</a>
+</li>
+<li>
+<strong>Limitations</strong>: No mass downloads, no commercial map production based on the data, no storage of data except for caching.</li>
+</ul><h4>
+<a name="bing-bing" class="anchor" href="#bing-bing"><span class="octicon octicon-link"></span></a>Bing (<code>:bing</code>)</h4>
+
+<ul>
+<li>
+<strong>API key</strong>: required</li>
+<li>
+<strong>Key signup</strong>: <a href="http://www.bingmapsportal.com">http://www.bingmapsportal.com</a>
+</li>
+<li>
+<strong>Quota</strong>: 50,000 requests/24 hrs</li>
+<li>
+<strong>Region</strong>: world</li>
+<li>
+<strong>SSL support</strong>: no</li>
+<li>
+<strong>Languages</strong>: ?</li>
+<li>
+<strong>Documentation</strong>: <a href="http://msdn.microsoft.com/en-us/library/ff701715.aspx">http://msdn.microsoft.com/en-us/library/ff701715.aspx</a>
+</li>
+<li>
+<strong>Terms of Service</strong>: <a href="http://www.microsoft.com/maps/product/terms.html">http://www.microsoft.com/maps/product/terms.html</a>
+</li>
+<li>
+<strong>Limitations</strong>: No country codes or state names. Must be used on "public-facing, non-password protected web sites," "in conjunction with Bing Maps or an application that integrates Bing Maps."</li>
+</ul><h4>
+<a name="nominatim-nominatim" class="anchor" href="#nominatim-nominatim"><span class="octicon octicon-link"></span></a>Nominatim (<code>:nominatim</code>)</h4>
+
+<ul>
+<li>
+<strong>API key</strong>: none</li>
+<li>
+<strong>Quota</strong>: 1 request/second</li>
+<li>
+<strong>Region</strong>: world</li>
+<li>
+<strong>SSL support</strong>: no</li>
+<li>
+<strong>Languages</strong>: ?</li>
+<li>
+<strong>Documentation</strong>: <a href="http://wiki.openstreetmap.org/wiki/Nominatim">http://wiki.openstreetmap.org/wiki/Nominatim</a>
+</li>
+<li>
+<strong>Terms of Service</strong>: <a href="http://wiki.openstreetmap.org/wiki/Nominatim_usage_policy">http://wiki.openstreetmap.org/wiki/Nominatim_usage_policy</a>
+</li>
+<li>
+<strong>Limitations</strong>: Please limit request rate to 1 per second and include your contact information in User-Agent headers (eg: <code>Geocoder.configure(:http_headers =&gt; { "User-Agent" =&gt; "your contact info" })</code>). Data licensed under CC-BY-SA (you must provide attribution).</li>
+</ul><h4>
+<a name="yandex-yandex" class="anchor" href="#yandex-yandex"><span class="octicon octicon-link"></span></a>Yandex (<code>:yandex</code>)</h4>
+
+<ul>
+<li>
+<strong>API key</strong>: none</li>
+<li>
+<strong>Quota</strong>: 25000 requests / day</li>
+<li>
+<strong>Region</strong>: world</li>
+<li>
+<strong>SSL support</strong>: no</li>
+<li>
+<strong>Languages</strong>: Russian, Belarusian, Ukrainian, English, Turkish (only for maps of Turkey)</li>
+<li>
+<strong>Documentation</strong>: <a href="http://api.yandex.com.tr/maps/doc/intro/concepts/intro.xml">http://api.yandex.com.tr/maps/doc/intro/concepts/intro.xml</a>
+</li>
+<li>
+<strong>Terms of Service</strong>: <a href="http://api.yandex.com.tr/maps/doc/intro/concepts/intro.xml#rules">http://api.yandex.com.tr/maps/doc/intro/concepts/intro.xml#rules</a>
+</li>
+<li>
+<strong>Limitations</strong>: ?</li>
+</ul><h4>
+<a name="geocoderca-geocoder_ca" class="anchor" href="#geocoderca-geocoder_ca"><span class="octicon octicon-link"></span></a>Geocoder.ca (<code>:geocoder_ca</code>)</h4>
+
+<ul>
+<li>
+<strong>API key</strong>: none</li>
+<li>
+<strong>Quota</strong>: ?</li>
+<li>
+<strong>Region</strong>: US and Canada</li>
+<li>
+<strong>SSL support</strong>: no</li>
+<li>
+<strong>Languages</strong>: English</li>
+<li>
+<strong>Documentation</strong>: ?</li>
+<li>
+<strong>Terms of Service</strong>: <a href="http://geocoder.ca/?terms=1">http://geocoder.ca/?terms=1</a>
+</li>
+<li>
+<strong>Limitations</strong>: "Under no circumstances can our data be re-distributed or re-sold by anyone to other parties without our written permission."</li>
+</ul><h4>
+<a name="geocoderus-geocoder_us" class="anchor" href="#geocoderus-geocoder_us"><span class="octicon octicon-link"></span></a>Geocoder.us (<code>:geocoder_us</code>)</h4>
+
+<ul>
+<li>
+<strong>API key</strong>: HTTP Basic Auth</li>
+<li>
+<strong>Sign up</strong>: <a href="http://geocoder.us/user/signup">http://geocoder.us/user/signup</a>
+</li>
+<li>
+<strong>Quota</strong>: You can purchase 20,000 credits at a time for $50</li>
+<li>
+<strong>Region</strong>: US</li>
+<li>
+<strong>SSL support</strong>: no</li>
+<li>
+<strong>Languages</strong>: English</li>
+<li>
+<strong>Documentation</strong>: <a href="http://geocoder.us/help/">http://geocoder.us/help/</a>
+</li>
+<li>
+<strong>Terms of Service</strong>: <a href="http://geocoder.us/terms.shtml">http://geocoder.us/terms.shtml</a>
+</li>
+<li>
+<strong>Limitations</strong>: ?</li>
+</ul><h4>
+<a name="mapquest-mapquest" class="anchor" href="#mapquest-mapquest"><span class="octicon octicon-link"></span></a>Mapquest (<code>:mapquest</code>)</h4>
+
+<ul>
+<li>
+<strong>API key</strong>: required</li>
+<li>
+<strong>Key signup</strong>: <a href="http://developer.mapquest.com/web/products/open">http://developer.mapquest.com/web/products/open</a>
+</li>
+<li>
+<strong>Quota</strong>: ?</li>
+<li>
+<strong>HTTP Headers</strong>: in order to use the licensed API you can configure the http_headers to include a referer as so:
+<code>Geocoder.configure(:http_headers =&gt; { "Referer" =&gt; "http://foo.com" })</code>
+You can also allow a blank referer from the API management console via mapquest but it is potentially a security risk that someone else could use your API key from another domain.</li>
+<li>
+<strong>Region</strong>: world</li>
+<li>
+<strong>SSL support</strong>: no</li>
+<li>
+<strong>Languages</strong>: English</li>
+<li>
+<strong>Documentation</strong>: <a href="http://www.mapquestapi.com/geocoding/">http://www.mapquestapi.com/geocoding/</a>
+</li>
+<li>
+<strong>Terms of Service</strong>: <a href="http://info.mapquest.com/terms-of-use/">http://info.mapquest.com/terms-of-use/</a>
+</li>
+<li>
+<strong>Limitations</strong>: ?</li>
+<li>
+<strong>Notes</strong>: You can specify the licensed API by setting: <code>Geocoder.configure(:mapquest =&gt; {:licensed =&gt; true})</code> (defaults to free "open" version)</li>
+</ul><h4>
+<a name="ovinokia-ovi" class="anchor" href="#ovinokia-ovi"><span class="octicon octicon-link"></span></a>Ovi/Nokia (<code>:ovi</code>)</h4>
+
+<ul>
+<li>
+<strong>API key</strong>: not required, but performance restricted without it</li>
+<li>
+<strong>Quota</strong>: ?</li>
+<li>
+<strong>Region</strong>: world</li>
+<li>
+<strong>SSL support</strong>: no</li>
+<li>
+<strong>Languages</strong>: English</li>
+<li>
+<strong>Documentation</strong>: <a href="http://api.maps.ovi.com/devguide/overview.html">http://api.maps.ovi.com/devguide/overview.html</a>
+</li>
+<li>
+<strong>Terms of Service</strong>: <a href="http://www.developer.nokia.com/Develop/Maps/TC.html">http://www.developer.nokia.com/Develop/Maps/TC.html</a>
+</li>
+<li>
+<strong>Limitations</strong>: ?</li>
+</ul><h4>
+<a name="esri-esri" class="anchor" href="#esri-esri"><span class="octicon octicon-link"></span></a>ESRI (<code>:esri</code>)</h4>
+
+<ul>
+<li>
+<strong>API key</strong>: none</li>
+<li>
+<strong>Quota</strong>: Required for some scenarios (see Terms of Service)</li>
+<li>
+<strong>Region</strong>: world</li>
+<li>
+<strong>SSL support</strong>: yes</li>
+<li>
+<strong>Languages</strong>: English</li>
+<li>
+<strong>Documentation</strong>: <a href="http://resources.arcgis.com/en/help/arcgis-online-geocoding-rest-api/">http://resources.arcgis.com/en/help/arcgis-online-geocoding-rest-api/</a>
+</li>
+<li>
+<strong>Terms of Service</strong>: <a href="http://www.esri.com/software/arcgis/arcgisonline/services/geoservices">http://www.esri.com/software/arcgis/arcgisonline/services/geoservices</a>
+</li>
+<li>
+<strong>Limitations</strong>: ?</li>
+<li>
+<strong>Notes</strong>: You can specify which projection you want to use by setting, for example: <code>Geocoder.configure(:esri =&gt; {:outSR =&gt; 102100})</code>.</li>
+</ul><h4>
+<a name="data-science-toolkit-dstk" class="anchor" href="#data-science-toolkit-dstk"><span class="octicon octicon-link"></span></a>Data Science Toolkit (<code>:dstk</code>)</h4>
+
+<p>Data Science Toolkit provides an API whose reponse format is like Google's but which can be set up as a privately hosted service.</p>
+
+<ul>
+<li>
+<strong>API key</strong>: none</li>
+<li>
+<strong>Quota</strong>: None quota if you are self-hosting the service.</li>
+<li>
+<strong>Region</strong>: world</li>
+<li>
+<strong>SSL support</strong>: ?</li>
+<li>
+<strong>Languages</strong>: en</li>
+<li>
+<strong>Documentation</strong>: <a href="http://www.datasciencetoolkit.org/developerdocs">http://www.datasciencetoolkit.org/developerdocs</a>
+</li>
+<li>
+<strong>Terms of Service</strong>: <a href="http://www.datasciencetoolkit.org/developerdocs#googlestylegeocoder">http://www.datasciencetoolkit.org/developerdocs#googlestylegeocoder</a>
+</li>
+<li>
+<strong>Limitations</strong>: No reverse geocoding.</li>
+<li>
+<strong>Notes</strong>: If you are hosting your own DSTK server you will need to configure the host name, eg: <code>Geocoder.configure(:lookup =&gt; :dstk, :host =&gt; "localhost:4567")</code>.</li>
+</ul><h4>
+<a name="baidu-baidu" class="anchor" href="#baidu-baidu"><span class="octicon octicon-link"></span></a>Baidu (<code>:baidu</code>)</h4>
+
+<ul>
+<li>
+<strong>API key</strong>: required</li>
+<li>
+<strong>Quota</strong>: No quota limits for geocoding</li>
+<li>
+<strong>Region</strong>: China</li>
+<li>
+<strong>SSL support</strong>: no</li>
+<li>
+<strong>Languages</strong>: Chinese (Simplified)</li>
+<li>
+<strong>Documentation</strong>: <a href="http://developer.baidu.com/map/webservice-geocoding.htm">http://developer.baidu.com/map/webservice-geocoding.htm</a>
+</li>
+<li>
+<strong>Terms of Service</strong>: <a href="http://developer.baidu.com/map/law.htm">http://developer.baidu.com/map/law.htm</a>
+</li>
+<li>
+<strong>Limitations</strong>: Only good for non-commercial use. For commercial usage please check <a href="http://developer.baidu.com/map/question.htm#qa0013">http://developer.baidu.com/map/question.htm#qa0013</a>
+</li>
+<li>
+<strong>Notes</strong>: To use Baidu set <code>Geocoder.configure(:lookup =&gt; :baidu, :api_key =&gt; "your_api_key")</code>.</li>
+</ul><h4>
+<a name="cloudmade-cloudmade" class="anchor" href="#cloudmade-cloudmade"><span class="octicon octicon-link"></span></a>CloudMade (<code>:cloudmade</code>)</h4>
+
+<ul>
+<li>
+<strong>API key</strong>: required</li>
+<li>
+<strong>Quota</strong>: 100,000 free requests, then purchase 100,000 more for $15</li>
+<li>
+<strong>Region</strong>: world</li>
+<li>
+<strong>SSL support</strong>: yes ($5 per 100,000 requests)</li>
+<li>
+<strong>Languages</strong>: en</li>
+<li>
+<strong>Documentation</strong>: <a href="http://cloudmade.com/documentation/geocoding">http://cloudmade.com/documentation/geocoding</a>
+</li>
+<li>
+<strong>Terms of Service</strong>: <a href="http://cloudmade.com/api-terms-of-service">http://cloudmade.com/api-terms-of-service</a>
+</li>
+<li>
+<strong>Limitations</strong>: ?</li>
+</ul><h3>
+<a name="ip-address-services" class="anchor" href="#ip-address-services"><span class="octicon octicon-link"></span></a>IP Address Services</h3>
+
+<h4>
+<a name="freegeoip-freegeoip" class="anchor" href="#freegeoip-freegeoip"><span class="octicon octicon-link"></span></a>FreeGeoIP (<code>:freegeoip</code>)</h4>
+
+<ul>
+<li>
+<strong>API key</strong>: none</li>
+<li>
+<strong>Quota</strong>: 10000 requests per hour. After reaching the hourly quota, all of your requests will result in HTTP 403 (Forbidden) until it clears up on the next roll over.</li>
+<li>
+<strong>Region</strong>: world</li>
+<li>
+<strong>SSL support</strong>: no</li>
+<li>
+<strong>Languages</strong>: English</li>
+<li>
+<strong>Documentation</strong>: <a href="http://github.com/fiorix/freegeoip/blob/master/README.md">http://github.com/fiorix/freegeoip/blob/master/README.md</a>
+</li>
+<li>
+<strong>Terms of Service</strong>: ?</li>
+<li>
+<strong>Limitations</strong>: ?</li>
+</ul><h4>
+<a name="maxmind-web-services-maxmind" class="anchor" href="#maxmind-web-services-maxmind"><span class="octicon octicon-link"></span></a>MaxMind Web Services (<code>:maxmind</code>)</h4>
+
+<ul>
+<li>
+<strong>API key</strong>: required</li>
+<li>
+<strong>Quota</strong>: Request Packs can be purchased</li>
+<li>
+<strong>Region</strong>: world</li>
+<li>
+<strong>SSL support</strong>: yes</li>
+<li>
+<strong>Languages</strong>: English</li>
+<li>
+<strong>Documentation</strong>: <a href="http://www.maxmind.com/app/web_services">http://www.maxmind.com/app/web_services</a>
+</li>
+<li>
+<strong>Terms of Service</strong>: ?</li>
+<li>
+<strong>Limitations</strong>: ?</li>
+<li>
+<strong>Notes</strong>: You must specify which MaxMind service you are using in your configuration. For example: <code>Geocoder.configure(:maxmind =&gt; {:service =&gt; :omni})</code>.</li>
+</ul><h4>
+<a name="maxmind-local-maxmind_local" class="anchor" href="#maxmind-local-maxmind_local"><span class="octicon octicon-link"></span></a>MaxMind Local (<code>:maxmind_local</code>)</h4>
+
+<ul>
+<li>
+<strong>API key</strong>: none (requires the GeoLite City database which can be downloaded from <a href="http://dev.maxmind.com/geoip/legacy/geolite/">MaxMind</a>)</li>
+<li>
+<strong>Quota</strong>: none</li>
+<li>
+<strong>Region</strong>: world</li>
+<li>
+<strong>SSL support</strong>: N/A</li>
+<li>
+<strong>Languages</strong>: English</li>
+<li>
+<strong>Documentation</strong>: <a href="http://www.maxmind.com/en/city">http://www.maxmind.com/en/city</a>
+</li>
+<li>
+<strong>Terms of Service</strong>: ?</li>
+<li>
+<strong>Limitations</strong>: ?</li>
+<li>
+<strong>Notes</strong>: You must add the <strong>geoip</strong> gem to your Gemfile or have it installed in your system. You also have to specify the path of the MaxMind database in your configuration. For example:</li>
+</ul><p><code>Geocoder.configure(:ip_lookup =&gt; :maxmind_local, :maxmind_local =&gt; {:database =&gt; File.join('folder', 'GeoLiteCity.dat')})</code></p>
+
+<h4>
+<a name="baidu-ip-baidu_ip" class="anchor" href="#baidu-ip-baidu_ip"><span class="octicon octicon-link"></span></a>Baidu IP (<code>:baidu_ip</code>)</h4>
+
+<ul>
+<li>
+<strong>API key</strong>: required</li>
+<li>
+<strong>Quota</strong>: No quota limits for geocoding</li>
+<li>
+<strong>Region</strong>: China</li>
+<li>
+<strong>SSL support</strong>: no</li>
+<li>
+<strong>Languages</strong>: Chinese (Simplified)</li>
+<li>
+<strong>Documentation</strong>: <a href="http://developer.baidu.com/map/webservice-geocoding.htm">http://developer.baidu.com/map/webservice-geocoding.htm</a>
+</li>
+<li>
+<strong>Terms of Service</strong>: <a href="http://developer.baidu.com/map/law.htm">http://developer.baidu.com/map/law.htm</a>
+</li>
+<li>
+<strong>Limitations</strong>: Only good for non-commercial use. For commercial usage please check <a href="http://developer.baidu.com/map/question.htm#qa0013">http://developer.baidu.com/map/question.htm#qa0013</a>
+</li>
+<li>
+<strong>Notes</strong>: To use Baidu set <code>Geocoder.configure(:lookup =&gt; :baidu_ip, :api_key =&gt; "your_api_key")</code>.</li>
+</ul>

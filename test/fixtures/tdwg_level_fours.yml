@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  country: MyString
+  description: MyText
+  tdwg_level_three_id: 1
+  code: MyString
+  iso_code: MyString
+
+two:
+  country: MyString
+  description: MyText
+  tdwg_level_three_id: 1
+  code: MyString
+  iso_code: MyString

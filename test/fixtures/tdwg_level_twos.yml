@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  region: MyString
+  description: MyText
+  tdwg_level_one_id: 1
+
+two:
+  region: MyString
+  description: MyText
+  tdwg_level_one_id: 1

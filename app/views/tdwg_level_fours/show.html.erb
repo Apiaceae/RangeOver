@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @tdwg_level_four.country %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @tdwg_level_four.description %>
+</p>
+
+<p>
+  <strong>Tdwg level three:</strong>
+  <%= @tdwg_level_four.tdwg_level_three_id %>
+</p>
+
+<p>
+  <strong>Code:</strong>
+  <%= @tdwg_level_four.code %>
+</p>
+
+<p>
+  <strong>Iso code:</strong>
+  <%= @tdwg_level_four.iso_code %>
+</p>
+
+<%= link_to 'Edit', edit_tdwg_level_four_path(@tdwg_level_four) %> |
+<%= link_to 'Back', tdwg_level_fours_path %>

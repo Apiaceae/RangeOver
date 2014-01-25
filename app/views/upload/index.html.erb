@@ -1,0 +1,22 @@
+<h1>Upload#index</h1>
+<p>Find me in app/views/upload/index.html.erb</p>
+
+  <% if user_signed_in? %>
+
+
+<%= form_for :upload do |f| %>
+
+ <p>
+  <%= f.label :'uploaded file' %>
+  <%= f.text_field :'uploaded file' %>
+  <%= f.file_field :uploadedfile  %>
+
+</p>
+<p>
+  <%= submit_tag "Go Process", :name => nil, class: "button radius" %>
+</p>
+
+<% end %>
+ <% else %>
+ <%= render "form" %>
+ <% end %>

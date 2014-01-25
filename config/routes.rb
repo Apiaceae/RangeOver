@@ -1,5 +1,33 @@
 Rangeover::Application.routes.draw do
-  get "welcome/index"
+  resources :tdwg_gazetteers
+
+  resources :tdwg_level_fours
+
+  resources :tdwg_level_threes
+
+  resources :tdwg_level_twos
+
+  resources :tdwg_level_ones
+
+  resources :tbl_level1s
+
+  # get "upload/index"
+  # get "contact/index"
+  # get "about/index"
+  # get "helps/index"
+  resources :categories
+  resources :helps
+  resources :batch
+
+  # get 'batch' => 'batch#index'
+  # get 'helps' => 'helps#index'
+  get 'about' => 'about#index'
+  get 'contact' => 'contact#index'
+  get 'upload' => 'upload#index'
+  # get 'batch/index'
+
+
+  resources :collections
   devise_for :users
   resources :gazetteers
 
@@ -9,7 +37,7 @@ Rangeover::Application.routes.draw do
   # You can have the root of your site routed with "root"
   root :to => "welcome#index"
   # root :to => "gazetteers#index"
-  
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

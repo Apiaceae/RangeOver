@@ -1,0 +1,7 @@
+<div data-alert class="alert-box success radius">
+  <% if user_signed_in? %>
+            welcome <%= current_user.email %>!
+            <%= link_to "Sign out", destroy_user_session_path %>
+          <% end %>
+  <a href="#" class="close">&times;</a>
+</div>
