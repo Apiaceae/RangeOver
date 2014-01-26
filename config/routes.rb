@@ -1,4 +1,14 @@
 Rangeover::Application.routes.draw do
+
+  %w[about contact show help].each do |page|
+    get page, controller: 'pages', action: page
+  end
+
+  get 'help' => 'pages#show'
+  # get "pages/about"
+  # get "pages/help"
+  # get "pages/show"
+  # get "pages/contact"
   get 'geocode' => 'geocode#index'
   get "geocode/index"
   get "geocode/show"
@@ -21,13 +31,13 @@ Rangeover::Application.routes.draw do
   # get "about/index"
   # get "helps/index"
   resources :categories
-  resources :helps
+  # resources :helps
   resources :batch
 
   # get 'batch' => 'batch#index'
   # get 'helps' => 'helps#index'
-  get 'about' => 'about#index'
-  get 'contact' => 'contact#index'
+  # get 'about' => 'about#index'
+  # get 'contact' => 'contact#index'
   get 'upload' => 'upload#index'
   # get 'batch/index'
 
