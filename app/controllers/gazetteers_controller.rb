@@ -7,18 +7,18 @@ class GazetteersController < ApplicationController
   def index
     if params[:search].present?
       # 查找附近50公里的地点
-      @gazetteers = Gazetteer.near(params[:search], 50, :unit => :km).paginate(:page => params[:page])
+      @gazetteers = Gazetteer.near(params[:search], 5).paginate(:page => params[:page])
       @hash = Gmaps4rails.build_markers(@gazetteers) do |gazetteer, marker|
         marker.lat gazetteer.latitude
         marker.lng gazetteer.longitude
-        marker.infowindow [gazetteer.name, gazetteer.latitude, gazetteer.longitude].compact.join(', ')
+        marker.infowindow [gazetteer.full_address, gazetteer.latitude, gazetteer.longitude].compact.join(', ')
         end
     else
       @gazetteers = Gazetteer.paginate(:page => params[:page])
       @hash = Gmaps4rails.build_markers(@gazetteers) do |gazetteer, marker|
         marker.lat gazetteer.latitude
         marker.lng gazetteer.longitude
-        marker.infowindow gazetteer.name
+        marker.infowindow gazetteer.full_address
         end
         respond_to do |format|
           format.html
@@ -35,7 +35,7 @@ class GazetteersController < ApplicationController
     @hash = Gmaps4rails.build_markers(@gazetteer) do |gaz, marker|
       marker.lat gaz.latitude
       marker.lng gaz.longitude
-      marker.infowindow gaz.name
+      marker.infowindow gaz.full_address
     end
   end
 
@@ -97,6 +97,6 @@ class GazetteersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def gazetteer_params
-      params.require(:gazetteer).permit(:name, :address, :latitude, :longitude, :gmaps, :category_id, :user_id)
+      params.require(:gazetteer).permit(:full_address, :address, :latitude, :longitude, :gmaps, :category_id, :user_id)
     end
 end

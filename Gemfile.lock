@@ -1,3 +1,10 @@
+GIT
+  remote: git://github.com/hstove/mobylette.git
+  revision: 80df828176da5db4c9cdfaa21ee8589c9d408449
+  specs:
+    mobylette (3.4.1)
+      actionpack (>= 3.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -173,6 +180,7 @@ DEPENDENCIES
   jquery-rails
   kaminari
   meta_request
+  mobylette!
   mysql2
   pry
   puma

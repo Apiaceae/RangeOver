@@ -1,25 +1,22 @@
 <%= form_for(@gazetteer) do |f| %>
   <% if @gazetteer.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@gazetteer.errors.count, "error") %> prohibited this gazetteer from being saved:</h2>
-
-      <ul>
+    <div class="panel">
+      <h3><%= pluralize(@gazetteer.errors.count, "error") %> prohibited this gazetteer from being saved!</h3>
       <% @gazetteer.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
+      <p><%= msg %></p>
       <% end %>
-      </ul>
-    </div>
+</div>
   <% end %>
 
-
+<div class="field">
+    <%= f.label :category %><br>
+    <%= f.collection_select(:category_id, Category.all, :id, :name, prompt: true) %>
+  </div>
   <div class="field">
     <%= f.label :address %><br>
     <%= f.text_field :address %>
   </div>
-  <div class="field">
-    <%= f.label :category %><br>
-    <%= f.collection_select(:category_id, @categories, :id, :name, {:selected => @gazetteer.category_id}) %>
-  </div>
+
 
   <div class="actions">
     <%= f.submit :name => nil, class: "button radius" %>

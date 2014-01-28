@@ -1,1 +1,1 @@
-json.extract! @gazetteer, :name, :address, :latitude, :longitude, :gmaps, :created_at, :updated_at
+json.extract! @gazetteer, :full_address, :address, :latitude, :longitude, :gmaps, :category, :created_at, :updated_at

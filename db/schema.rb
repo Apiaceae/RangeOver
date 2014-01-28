@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140125065532) do
+ActiveRecord::Schema.define(version: 20140127231412) do
 
   create_table "categories", force: true do |t|
     t.string   "name"
@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(version: 20140125065532) do
   end
 
   create_table "gazetteers", force: true do |t|
-    t.string   "name"
+    t.string   "full_address"
     t.string   "address"
     t.float    "latitude"
     t.float    "longitude"
@@ -48,13 +48,6 @@ ActiveRecord::Schema.define(version: 20140125065532) do
     t.datetime "updated_at"
     t.integer  "category_id"
     t.integer  "user_id"
-  end
-
-  create_table "tbl_level1s", force: true do |t|
-    t.string   "continent"
-    t.text     "description"
-    t.datetime "created_at"
-    t.datetime "updated_at"
   end
 
   create_table "tdwg_gazetteers", force: true do |t|

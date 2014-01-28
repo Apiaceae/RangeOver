@@ -19,7 +19,7 @@ class BatchController < ApplicationController
         # activerecord-import methods
       addresses << Gazetteer.new(
         :address => address_list[i], :latitude => z.latitude.to_s,
-        :longitude => z.longitude.to_s, :category_id => 1)
+        :longitude => z.longitude.to_s, :category_id => 1, :user_id => 2)
       end
     end
     Gazetteer.import addresses
@@ -48,6 +48,6 @@ class BatchController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def gazetteer_params
-      params.require(:gazetteer).permit(:name, :address, :latitude, :longitude, :gmaps, :category_id)
+      params.require(:gazetteer).permit(:name, :address, :latitude, :longitude, :gmaps, :category_id, :user_id)
     end
 end

@@ -3,8 +3,8 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
-  <%= @gazetteer.name %>
+  <strong>Full Address:</strong>
+  <%= @gazetteer.full_address %>
 </p>
 
 <p>
@@ -28,10 +28,17 @@
 </p>
 
 <h3>Nearby gazetteers</h3>
+
 <ul>
-<% for gazetteer in @gazetteer.nearbys(1000) %>
+
+<% for gazetteer in @gazetteer.nearbys(10)  %>
+<% if gazetteer.latitude != nil %>
 <li><%= link_to gazetteer.address, gazetteer %> (<%= gazetteer.distance.round(2) %> 公里)</li>
+<% else %>
+<p>No nearby address found for this gazetteer!</p>
 <% end %>
+<% end %>
+
 </ul>
 
 <%= link_to 'Edit', edit_gazetteer_path(@gazetteer) %> |
