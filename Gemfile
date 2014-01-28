@@ -28,6 +28,7 @@ group :development do
   gem 'puma'
   gem 'pry'
   gem 'hirb'
+  gem 'paloma'
   gem 'mobylette', github: 'hstove/mobylette'
   gem 'activerecord-import'
   gem 'batch-rails-4', '~> 0.2.3'

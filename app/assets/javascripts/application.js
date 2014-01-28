@@ -20,3 +20,4 @@
 
 $(function(){ $(document).foundation(); });
 // $(document).foundation();
+//= require paloma
