@@ -1,7 +1,8 @@
 (function() {
 
   // Defining some global variables
-  var map, geocoder, marker, center, circle, infowindow;
+  var map, geocoder, marker, infowindow;
+
   window.onload = function() {
 
     // Creating a new map
@@ -58,13 +59,11 @@
             map: map
           });
         }
-
-        // Setting the position of the marker to the returned location
-        marker.setPosition(results[0].geometry.location);
+         // Setting the position of the marker to the returned location
+          marker.setPosition(results[0].geometry.location);
 
         // Check to see if we've already to radius for a marker
         if (!circle) {
-
           // Add circle overlay and bind to marker
           circle = new google.maps.Circle({
             center: center,
@@ -74,10 +73,10 @@
             strokeWeight: 2,
             fillColor: '#FF0000',
             fillOpacity: 0.35,
-            map: map,
+            map: map
           });
 
-          // circle.bindTo('center', marker, 'position');
+          circle.bindTo('center', marker, 'position');
         }
 
         // Check to see if we've already got an InfoWindow object
@@ -86,6 +85,9 @@
           // Creating a new InfoWindow
           infowindow = new google.maps.InfoWindow();
         }
+
+        // Setting the position for the InfoWindow
+      infoWindow.setPosition(results[0].geometry.location);
 
         // Creating the content of the InfoWindow to the address
         // and the returned position

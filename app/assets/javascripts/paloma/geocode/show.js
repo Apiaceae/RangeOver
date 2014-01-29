@@ -1,5 +1,6 @@
 (function() {
 
+  // Defining some global variables
   var map, geocoder, marker, center, circle, infoWindow;
 
   window.onload = function() {
@@ -43,9 +44,10 @@
         marker = new google.maps.Marker({
           map: map
         });
-        // Setting the position of the marker to the returned location
-        marker.setPosition(results[0].geometry.location);
       }
+      // Setting the position of the marker to the returned location
+        marker.setPosition(results[0].geometry.location);
+        // marker.setPosition(latLng);
 
       // Check to see if we've already got a circle for a marker
       if (!circle) {
