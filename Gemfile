@@ -33,7 +33,7 @@ group :development do
   gem 'puma'
   gem 'pry'
   gem 'hirb'
-  gem 'paloma'
+  gem 'paloma', '2.0'
   gem 'mobylette', github: 'hstove/mobylette'
   gem 'activerecord-import'
   gem 'activerecord-tableless'

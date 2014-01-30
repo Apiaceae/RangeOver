@@ -102,7 +102,7 @@ GEM
     multi_json (1.8.2)
     mysql2 (0.3.11)
     orm_adapter (0.4.0)
-    paloma (3.0.2)
+    paloma (2.0.0)
       jquery-rails
     polyglot (0.3.3)
     pry (0.9.6)
@@ -204,7 +204,7 @@ DEPENDENCIES
   meta_request
   mobylette!
   mysql2
-  paloma
+  paloma (= 2.0)
   pry
   puma
   quiet_assets

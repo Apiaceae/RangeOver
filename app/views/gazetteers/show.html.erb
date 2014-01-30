@@ -26,6 +26,8 @@
   <strong>Gmaps:</strong>
   <%= @gazetteer.gmaps %>
 </p>
+<%= link_to 'Edit', edit_gazetteer_path(@gazetteer) %> |
+<%= link_to 'Back', gazetteers_path %>
 
 <h3>Nearby gazetteers</h3>
 
@@ -41,22 +43,8 @@
 
 </ul>
 
-<%= link_to 'Edit', edit_gazetteer_path(@gazetteer) %> |
-<%= link_to 'Back', gazetteers_path %>
 
 
-
-<div class="map_container">
-  <div id="map" class="gmaps4rails_map"></div>
-</div>
-
-<script type="text/javascript" charset="utf-8">
-handler = Gmaps.build('Google');
-handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
-  markers = handler.addMarkers(<%=raw @hash.to_json %>);
-  handler.bounds.extendWith(markers);
-  handler.fitMapToBounds();
-});
-</script>
+<%= render 'googlemap' %>
 
 
