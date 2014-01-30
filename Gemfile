@@ -36,6 +36,7 @@ group :development do
   gem 'paloma'
   gem 'mobylette', github: 'hstove/mobylette'
   gem 'activerecord-import'
+  gem 'activerecord-tableless'
   gem 'batch-rails-4', '~> 0.2.3'
   # gem 'pry-rails'
 end

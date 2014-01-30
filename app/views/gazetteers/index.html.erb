@@ -7,7 +7,7 @@
   <%= submit_tag "Search nearby", :name => nil, class: "large button radius" %>
 </p>
 <% end %>
-<i class="batch batch-#{batch-browser-download}"></i>
+
 <nav class="breadcrumbs">
 <p>Download:
   <%= link_to "CSV", gazetteers_path(format: "csv") %> |
@@ -45,16 +45,13 @@
     <% end %>
   </tbody>
 </table>
+<p><%= will_paginate @gazetteers, class: 'pagination-centered' %></p>
 
-<%= will_paginate @gazetteers, class: 'pagination-centered' %>
-
-
-<%= link_to 'New Gazetteer', new_gazetteer_path, class: "button radius" %>
+<p><%= link_to 'New Gazetteer', new_gazetteer_path, class: "large button radius" %></p>
 
 
-<div class="map_container">
-  <div id="map" class="gmaps4rails_map"></div>
-</div>
+  <div id="map" class="flex-video" ></div>
+
 
 <script type="text/javascript" charset="utf-8">
 handler = Gmaps.build('Google');

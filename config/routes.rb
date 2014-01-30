@@ -1,8 +1,8 @@
 Rangeover::Application.routes.draw do
-
-  %w[about contact show help].each do |page|
-    get page, controller: 'pages', action: page
-  end
+  resources :contacts, only:[:new, :create]
+  # %w[about contact show help].each do |page|
+  #   get page, controller: 'pages', action: page
+  # end
 
   get 'help' => 'pages#show'
   # get "pages/about"
