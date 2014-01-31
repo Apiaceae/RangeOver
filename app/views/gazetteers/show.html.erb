@@ -42,17 +42,6 @@
 <% end %>
 
 </ul>
-
-<div class="row">
-  <div id="map" class="large-12 columns" ></div>
-</div>
-<script type="text/javascript" charset="utf-8">
-  handler = Gmaps.build('Google');
-handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
-  markers = handler.addMarkers(<%=raw @hash.to_json %>);
-  handler.bounds.extendWith(markers);
-  handler.fitMapToBounds();
-});
-</script>
+<%= render 'gmaps' %>
 
 
