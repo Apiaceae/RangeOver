@@ -4,6 +4,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= content_for?(:title) ? yield(:title) : "Range Over of Plants" %></title>
     <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Range Over of Plants" %>">
+    <%= google_maps_api %>
+    <%= google_maps_geocode_api %>
     <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
     <%# Modernizr is required for Zurb Foundation %>
     <%= javascript_include_tag "vendor/custom.modernizr" %>
@@ -15,7 +17,6 @@
       <%= render 'layouts/navigation' %>
     </header>
     <main role="main">
-      <h2>Here is mobile page</h2>
        <%= render 'layouts/messages' %>
 <div class="row">
       <div class="large-12 columns">

@@ -1,6 +1,7 @@
 <% content_for :title do %>Contact<% end %>
 <h3>Contact</h3>
-<div class="form">
+<div class="row">
+  <div class="large-12 columns"></div>
 <%= simple_form_for @contact do |form| %>
   <%= form.error_notification %>
   <%= form.input :name, autofocus: true %>
