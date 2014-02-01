@@ -1,6 +1,13 @@
 <%# add navigation links to this file %>
-
-<li><%= link_to "Browse Gazetteers", gazetteers_path %></li>
+<li class="divider"></li>
+<li class="has-dropdown"><%= link_to "Browse" %>
+  <ul class="dropdown">
+    <li class="divider"></li>
+    <li><%= link_to "Gazetteers", gazetteers_path %></li>
+    <li><%= link_to "Gpx", '/tracks'%></li>
+</ul>
+</li>
+</li>
           <li class="divider"></li>
           <li class="has-dropdown"><%= link_to "Geocoding", '#' %>
           <ul class="dropdown">
@@ -12,6 +19,18 @@
           <li><%= link_to "Batch by webform", '/batch' %></li>
         </ul>
         </li>
+        
+      <li class="divider"></li>
+      <li class="has-dropdown"><%= link_to "Upload your file", '/geolocations' %>
+      <ul class="dropdown">
+        <li class="divider"></li>
+        <li><%= link_to "GPX", '/geolocations/new' %></li>
+        <li><%= link_to "KML", '/geolocations/new'%></li>
+      <li><%= link_to "TEXT", '/geolocations/new' %></li>
+      <li><%= link_to "Images", '/geolocations/new' %></li>
+    </ul>
+    </li>
+
         <li class="divider"></li>
           <li class="has-dropdown"><%= link_to "tdwg" %>
           <ul class="dropdown">

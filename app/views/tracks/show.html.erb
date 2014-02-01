@@ -1,0 +1,60 @@
+<p id="notice"><%= notice %></p>
+<%= google_maps_api %>
+<%= track_id_to_js(@track.id) if @track %>
+<p>
+  <strong>Title:</strong>
+  <%= @track.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @track.description %>
+</p>
+<p>
+  <strong>gpx_file_name:</strong>
+  <%= @track.gpx_file_name %>
+</p>
+<p>
+  <strong>gpx_content_typ:</strong>
+  <%= @track.gpx_content_type %>
+</p>
+<p>
+  <strong>gpx_file_size:</strong>
+  <%= @track.gpx_file_size %>
+</p>
+<p>
+  <strong>gpx_updated_at:</strong>
+  <%= @track.gpx_updated_at %>
+</p>
+
+<%= link_to 'Edit', edit_track_path(@track) %> |
+<%= link_to 'Back', tracks_path %>
+
+<div id="map_canvas" style="height:600px"></div>
+
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Point No.</th>
+        <th>Latitude</th>
+        <th>Longitude</th>
+        <th>Elevation</th>
+        <th>Description</th>
+        <th>Time</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @track.points.each do |point| %>
+        <tr>
+          <td><%= point.id %></td>
+          <td><%= point.name %></td>
+          <td><%= point.latitude %></td>
+          <td><%= point.longitude %></td>
+          <td><%= point.elevation %></td>
+          <td><%= point.description %></td>
+          <td><%= point.point_created_at %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>

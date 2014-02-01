@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140127231412) do
+ActiveRecord::Schema.define(version: 20140201081115) do
 
   create_table "categories", force: true do |t|
     t.string   "name"
@@ -49,6 +49,31 @@ ActiveRecord::Schema.define(version: 20140127231412) do
     t.integer  "category_id"
     t.integer  "user_id"
   end
+
+  create_table "geolocations", force: true do |t|
+    t.string   "title"
+    t.string   "description"
+    t.string   "location_file_name"
+    t.string   "location_content_type"
+    t.integer  "location_file_size"
+    t.datetime "location_updated_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "points", force: true do |t|
+    t.integer  "tracksegment_id"
+    t.string   "name"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.float    "elevation"
+    t.string   "description"
+    t.datetime "point_created_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "points", ["tracksegment_id"], name: "index_points_on_tracksegment_id", using: :btree
 
   create_table "tdwg_gazetteers", force: true do |t|
     t.string   "gazetteer"
@@ -96,6 +121,25 @@ ActiveRecord::Schema.define(version: 20140127231412) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "tracks", force: true do |t|
+    t.string   "title"
+    t.string   "description"
+    t.string   "gpx_file_name"
+    t.string   "gpx_content_type"
+    t.integer  "gpx_file_size"
+    t.datetime "gpx_updated_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "tracksegments", force: true do |t|
+    t.integer  "track_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "tracksegments", ["track_id"], name: "index_tracksegments_on_track_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

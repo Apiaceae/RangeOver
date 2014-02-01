@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @geolocation.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @geolocation.description %>
+</p>
+<p>
+  <strong>Location File Name:</strong>
+  <%= @geolocation.location_file_name %>
+</p>
+<p>
+  <strong>Location Content Type:</strong>
+  <%= @geolocation.location_content_type %>
+</p>
+<p>
+  <strong>Location File Size:</strong>
+  <%= @geolocation.location_file_size %>
+</p>
+
+
+<%= link_to 'Edit', edit_geolocation_path(@geolocation) %> |
+<%= link_to 'Back', geolocations_path %>

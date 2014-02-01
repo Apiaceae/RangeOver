@@ -13,6 +13,11 @@ class GazetteersController < ApplicationController
         marker.lng gazetteer.longitude
         marker.infowindow [gazetteer.full_address, gazetteer.latitude, gazetteer.longitude].compact.join(', ')
         end
+        respond_to do |format|
+          format.html
+          format.csv { render text: @gazetteers.to_csv }
+          format.xls { send_data @gazetteers.to_csv(col_sep: "\t") }
+        end
     else
       @gazetteers = Gazetteer.paginate(:page => params[:page])
       @hash = Gmaps4rails.build_markers(@gazetteers) do |gazetteer, marker|

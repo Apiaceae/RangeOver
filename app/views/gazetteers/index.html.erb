@@ -8,7 +8,12 @@
 </p>
 <% end %>
 
-<%= render 'download' %>
+
+<p>Download:
+  <%= link_to "CSV", gazetteers_path(format: "csv") %> |
+  <%= link_to "Excel", gazetteers_path(format: "xls") %>
+</p>
+</nav>
 <table>
   <thead>
     <tr>
@@ -40,7 +45,7 @@
     <% end %>
   </tbody>
 </table>
-<p><%= will_paginate @gazetteers, class: 'pagination-centered' %></p>
+<p><%= will_paginate @gazetteers, class: 'flickr_pagination' %></p>
 
 <p><%= link_to 'New Gazetteer', new_gazetteer_path, class: "large button radius" %></p>
 <%= render 'gmaps' %>

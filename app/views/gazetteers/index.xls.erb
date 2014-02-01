@@ -1,7 +1,7 @@
 <table border="1">
   <thead>
     <tr>
-      <th>Name</th>
+      <th>Full Address</th>
       <th>Address</th>
       <th>Latitude</th>
       <th>Longitude</th>
@@ -16,7 +16,7 @@
   <tbody>
     <% @gazetteers.each do |gazetteer| %>
       <tr>
-        <td><%= gazetteer.name %></td>
+        <td><%= gazetteer.full_address %></td>
         <td><%= gazetteer.address %></td>
         <td><%= gazetteer.latitude %></td>
         <td><%= gazetteer.longitude %></td>

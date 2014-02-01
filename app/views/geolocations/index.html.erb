@@ -1,0 +1,35 @@
+<h1>Listing geolocations</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>location_file_name</th>
+      <th>location_content_type</th>
+      <th>location_file_size</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @geolocations.each do |geolocation| %>
+      <tr>
+        <td><%= geolocation.title %></td>
+        <td><%= geolocation.description %></td>
+        <td><%= geolocation.location_file_name %></td>
+        <td><%= geolocation.location_content_type %></td>
+        <td><%= geolocation.location_file_size %></td>
+        <td><%= link_to 'Show', geolocation %></td>
+        <td><%= link_to 'Edit', edit_geolocation_path(geolocation) %></td>
+        <td><%= link_to 'Destroy', geolocation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Geolocation', new_geolocation_path %>

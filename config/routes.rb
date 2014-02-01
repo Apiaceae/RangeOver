@@ -1,4 +1,10 @@
 Rangeover::Application.routes.draw do
+  get 'tracks' => 'tracks#index'
+  resources :tracks
+
+  get 'geolocations' => 'geolocations#index'
+  resources :geolocations
+
   resources :contacts, only:[:new, :create]
   # %w[about contact show help].each do |page|
   #   get page, controller: 'pages', action: page
