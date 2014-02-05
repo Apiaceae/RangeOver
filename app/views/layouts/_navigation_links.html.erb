@@ -4,9 +4,17 @@
   <ul class="dropdown">
     <li class="divider"></li>
     <li><%= link_to "Gazetteers", gazetteers_path %></li>
-    <li><%= link_to "GPX", '/tracks'%></li>
+    <li><%= link_to "GPX", tracks_path %></li>
 </ul>
 </li>
+
+<li class="divider"></li>
+<li class="has-dropdown"><%= link_to "Field Suvery Events", events_path %>
+  <ul class="dropdown">
+    <li class="divider"></li>
+    <li><%= link_to "Gazetteers", gazetteers_path %></li>
+    <li><%= link_to "GPX", tracks_path %></li>
+</ul>
 </li>
           <li class="divider"></li>
           <li class="has-dropdown"><%= link_to "Geocoding", '/geocode' %>
@@ -42,6 +50,7 @@
           <li><%= link_to "TDWG gazetteers", tdwg_gazetteers_path %></li>
         </ul>
         </li>
+        
           <li class="divider"></li>
           <li><%= link_to "Log in", '/users/sign_in' %></li>
           <li class="divider"></li>
@@ -50,6 +59,7 @@
           <li><%= link_to "Contact Us", new_contact_path %></li>
           <li class="divider"></li>
           <li><%= link_to "About us", page_path('about') %></li>
+          
           <li class="divider"></li>
           <li class="has-dropdown"><%= link_to "Help", 'show' %>
             <ul class="dropdown">

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140201081115) do
+ActiveRecord::Schema.define(version: 20140205090339) do
 
   create_table "categories", force: true do |t|
     t.string   "name"
@@ -36,6 +36,24 @@ ActiveRecord::Schema.define(version: 20140201081115) do
     t.string "created_at"
     t.string "updated_at"
     t.string "address"
+  end
+
+  create_table "events", force: true do |t|
+    t.integer  "user_id"
+    t.string   "title"
+    t.text     "description"
+    t.datetime "start_at"
+    t.datetime "end_at"
+    t.integer  "member"
+    t.string   "geotag_file_name"
+    t.string   "geotag_content_type"
+    t.integer  "geotag_file_size"
+    t.datetime "geotag_updated_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "address"
+    t.float    "latitude"
+    t.float    "longitude"
   end
 
   create_table "gazetteers", force: true do |t|

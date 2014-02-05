@@ -35,13 +35,13 @@ group :development do
   gem 'nokogiri'
   gem 'polylines'
   gem 'puma'
-  gem 'pry'
+  gem 'pry', '>=0.9.10'
+  gem 'pry-rails', '0.3.2'
   gem 'hirb'
   gem 'mobylette', github: 'hstove/mobylette'
   gem 'activerecord-import'
   gem 'activerecord-tableless'
   gem 'batch-rails-4', '~> 0.2.3'
-  # gem 'pry-rails'
 end
 
 

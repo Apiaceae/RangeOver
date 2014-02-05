@@ -1,4 +1,6 @@
 Rangeover::Application.routes.draw do
+  resources :events
+
   get 'tracks' => 'tracks#index'
   resources :tracks
 

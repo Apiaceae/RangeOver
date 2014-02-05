@@ -1,0 +1,18 @@
+<%= simple_form_for(@event) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :user_id %>
+    <%= f.input :title %>
+    <%= f.input :description %>
+    <%= f.input :start_at %>
+    <%= f.input :end_at %>
+    <%= f.input :member %>
+    <%= f.input :address %>
+    <%= f.file_field :geotag %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
