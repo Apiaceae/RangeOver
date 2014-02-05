@@ -3,7 +3,7 @@
 
 // fix google map left panel widgets distored
 #map img {
-  max-width : none;
+  max-width : none; 
 }
 // override for the 'Home' navigation link
 .top-bar .name {
@@ -49,4 +49,5 @@ main {
 section {
   @extend .row;
   margin-top: 20px;
-  }
+}
+

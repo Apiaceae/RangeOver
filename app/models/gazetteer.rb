@@ -2,6 +2,7 @@ class Gazetteer < ActiveRecord::Base
   validates_presence_of :address, :category_id
   belongs_to :category
   belongs_to :user
+  has_and_belongs_to_many :events
 
   geocoded_by :address
   after_validation :geocode, if: ->(obj){ obj.address.present? and obj.address_changed? }
