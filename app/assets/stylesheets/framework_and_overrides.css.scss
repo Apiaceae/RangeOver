@@ -1,10 +1,6 @@
 // import the CSS framework
 @import "foundation";
 
-// fix google map left panel widgets distored
-#map img {
-  max-width : none; 
-}
 // override for the 'Home' navigation link
 .top-bar .name {
   font-size: rem-calc(13);

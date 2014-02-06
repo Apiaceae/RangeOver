@@ -1,5 +1,12 @@
 <% @events.each do |event| %>
-<h3>
-<%= link_to event.title, event %></h3>
-<p>Date duration: from <%= event.start_at.to_date %> to <%= event.end_at.to_date %> </p>
+<div class="panel">
+  <h3>
+  <%= link_to event.title, event %></h3>
+  <p>Date duration: from <%= event.start_at.to_date %> to <%= event.end_at.to_date %> </p>
+  <%= link_to 'Show', event %> | 
+  <%= link_to 'Edit', edit_event_path(event) %> | 
+  <%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %>
+</div>
+
 <% end %>
+<%= link_to 'New Event', new_event_path, class: "large button" %>
