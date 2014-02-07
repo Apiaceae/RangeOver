@@ -10,7 +10,7 @@
    ================================================== */
 #featured { 
 	width: 940px;
-	height: 450px;
+	height: 400px;
 	background: #000 url('orbit/loading.gif') no-repeat center center;
 	overflow: hidden; 
 }

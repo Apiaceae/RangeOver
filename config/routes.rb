@@ -8,15 +8,12 @@ Rangeover::Application.routes.draw do
   resources :geolocations
 
   resources :contacts, only:[:new, :create]
-  # %w[about contact show help].each do |page|
-  #   get page, controller: 'pages', action: page
-  # end
+  %w[about georeference_example service_provider].each do |page|
+    get page, controller: 'pages', action: page
+  end
 
-  get 'help' => 'pages#show'
-  # get "pages/about"
-  # get "pages/help"
-  # get "pages/show"
-  # get "pages/contact"
+  get 'help' => 'pages#georeference_example'
+ 
   get 'geocode' => 'geocode#index'
   get "geocode/index"
   get "geocode/show"

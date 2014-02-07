@@ -51,20 +51,21 @@
         </ul>
         </li>
         
-          <li class="divider"></li>
-          <li><%= link_to "Log in", '/users/sign_in' %></li>
-          <li class="divider"></li>
-          <li><%= link_to "Register", '/users/sign_up' %></li>
-          <li class="divider"></li>
-          <li><%= link_to "Contact Us", new_contact_path %></li>
-          <li class="divider"></li>
-          <li><%= link_to "About us", page_path('about') %></li>
+        <li class="divider"></li>
+        <li class="has-dropdown"><%= link_to "Users", '/users/sign_in' %>
+          <ul class="dropdown">
+            <li class="divider"></li>
+            <li><%= link_to "Log in", '/users/sign_in' %></li>
+            <li><%= link_to "Register", '/users/sign_up' %></li>
+          </ul>
+        </li>
+        
           
           <li class="divider"></li>
-          <li class="has-dropdown"><%= link_to "Help", 'show' %>
+          <li class="has-dropdown"><%= link_to "Help", 'service_provider' %>
             <ul class="dropdown">
               <li class="divider"></li>
-              <li><%= link_to "about service provider", 'show' %></li>
-              <li><%= link_to "about georeferrenced example", 'help' %></li>
+              <li><%= link_to "about service provider", 'service_provider' %></li>
+              <li><%= link_to "about georeferrenced example", 'georeference_example' %></li>
             </ul>
           </li>
