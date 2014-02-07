@@ -16,7 +16,7 @@
 //= require underscore
 //= require gmaps/google
 //= require foundation
-//= require_tree .
+//= require tracks
 $(function() {
   $(document).foundation();
 });
